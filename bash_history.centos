@@ -1,0 +1,13 @@
+dd if=/dev/zero of=/swapfile bs=1k count=2048000
+mkswap /swapfile
+swapon /swapfile
+swapon -s
+echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
+free -m
+
+mount /dev/vdb1 /mnt
+cp /mnt/docker-ce/docker-compose /usr/local/bin/
+cp -r /mnt/docker-images/gitlab ~/
+umount /mnt
+
+exit

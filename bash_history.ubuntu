@@ -1,0 +1,9 @@
+nohup scp -r root@git.typhoon.fun:/mnt ./
+bg 1
+echo -e "set nu\nset noai nosi" > ~/.vimrc
+sed -i 's/alF/lF/' ~/.bashrc
+git config --global user.email "chenq182@sina.com"
+git config --global user.name "Quan Chen"
+#docker volume ls --filter dangling=true|grep local|awk '{print $2}'|xargs docker volume rm
+ll /var/cache/apt/archives/
+exit
